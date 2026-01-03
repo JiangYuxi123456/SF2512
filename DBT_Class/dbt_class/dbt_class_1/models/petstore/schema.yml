@@ -1,0 +1,14 @@
+
+version: 2
+
+models:
+  - name: products
+    description: "table about product information"
+    columns:
+      - name: id
+        description: "The id of the product"
+        data_tests:
+          - unique
+          - not_null
+
+
