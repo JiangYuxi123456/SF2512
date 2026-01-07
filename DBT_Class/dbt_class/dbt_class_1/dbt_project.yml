@@ -37,3 +37,14 @@ models:
     petstore:
       +materialized: view
       +schema: petstore
+
+seeds:
+  dbt_class_1:
+    abtesting:
+      ab_data_1:
+        +schema: landing
+        +column_types:
+          user_id: int
+          timestamp: datetime
+          group: varchar(20)
+          converted: bit
