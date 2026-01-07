@@ -1,0 +1,16 @@
+exposures:
+  - name: sales_dashboard
+    label: Sales Dashboard
+    type: dashboard
+    maturity: high
+    url: https://looker.company.com/dashboards/123
+    description: >
+      Executive sales dashboard powered by core marts.
+
+    depends_on:
+      - ref('t2_id_payments')
+      - ref('my_second_dbt_model')
+
+    owner:
+      name: Analytics Team
+      email: analytics@company.com
