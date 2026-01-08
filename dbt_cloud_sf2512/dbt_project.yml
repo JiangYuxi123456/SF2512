@@ -40,6 +40,8 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+    BRONZE:
+      +schema: BRONZE
 
 seeds:
   my_new_project:

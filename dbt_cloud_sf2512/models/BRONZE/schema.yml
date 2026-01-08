@@ -1,0 +1,5 @@
+sources:
+  - name: SEED_CUSTOMERS          # source_name for sales schema
+    schema: SEED_INPUT
+    tables:
+      - name: CUSTOMERS
