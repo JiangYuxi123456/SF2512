@@ -28,5 +28,9 @@ models:
             description: "The methods clients used for payment service"
             tests:
                 - validate_datatype:
+<<<<<<< HEAD
                     expected_datatype: TEXT
 
+=======
+                    expected_datatype: TEXT
+>>>>>>> b24104e0c27e46f51027ecdb016addf9875ce03f
