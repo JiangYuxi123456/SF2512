@@ -59,6 +59,5 @@ final_set as (
 
 select * from final_set
 
--- SELECT * FROM final
 
 
