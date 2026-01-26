@@ -1,4 +1,4 @@
-# dbt Core Analytics Engineering Demo
+# dbt Core Demo
 
 ---
 
