@@ -58,21 +58,21 @@ dbt_class_1/
 - **Ephemeral models** are used to simplify transformations without materializing intermediate tables.
 
 
-  ## Incremental Processing
+## Incremental Processing
 
-- Incremental models are used to efficiently process growing datasets without full refreshes.
-- Append-style logic is implemented using `is_incremental()` conditions.
-- Merge-based upsert strategies are applied to deduplicate records during incremental loads.
-- Window functions are used to retain the latest records based on event timestamps.
+- Incremental models are implemented on event-level data using dbt incremental materializations.
+- New records are selected using `is_incremental()` by comparing event timestamps against the latest processed timestamp.
+- A merge-based upsert strategy is applied with a defined `unique_key` to handle duplicated or late-arriving events.
+- Window functions (`row_number()`) are used to retain the most recent record per entity during incremental loads.
 
 
 
 ## Testing & Data Quality
 
-- Schema tests such as `not_null` and `unique` are defined to enforce basic data integrity.
-- **Custom SQL tests** are implemented to validate business assumptions.
-- A/B testing datasets are checked for minimum row counts and structural completeness.
-- Tests are executed as part of the dbt workflow to catch issues early.
+- Column-level schema tests (`not_null`, `unique`) are defined for core models in `schema.yml`.
+- Custom SQL tests are used to validate dataset completeness and basic data assumptions.
+- Row-count checks are applied to detect incomplete loads or unexpected upstream data issues.
+- These tests help ensure data reliability before downstream analytical use.
 
 
 
@@ -83,12 +83,5 @@ dbt_class_1/
 - Experiment datasets are validated through custom SQL tests before downstream use.
 
 
-
-## Key Takeaways
-
-- Hands-on experience with **dbt Core** analytics engineering workflows.
-- Practical implementation of incremental loading and upsert strategies.
-- Strong emphasis on data quality through schema and custom SQL tests.
-- Structured approach to modeling analytics-ready datasets.
 
 
